@@ -1,36 +1,36 @@
-<div class="container">
-<div class="page-header">
-<h1>Directors</h1>
-</div>
-<hr>
 
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <td><strong>Image</strong></td>
-      <td><strong>DOB</strong></td>
-      <td><strong>Name</strong></td>
-      <td><strong>Bio</strong></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-  </thead>
-  <tbody>
-    <% @directors.each do |director| %>
-    <tr>
-      <td><img width= "100" src="<%= director.image_url %>"></td>
-      <td><%= director.name %></td>
-      <td><%= director.dob %></td>
-      <td><%= director.bio[0..26] + "..." %></td>
-      <td>Details</td>
-      <td>Edit</td>
-      <td>Delete</td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
-</div>
+  <div class="page-header">
+    <h1>Directors</h1>
+  </div>
+
+<a type="button" href="/add_director" class="btn btn-primary">Add a new director</a>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <td><strong>Image</strong></td>
+        <td><strong>DOB</strong></td>
+        <td><strong>Name</strong></td>
+        <td><strong>Bio</strong></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </thead>
+    <tbody>
+      <% @directors.each do |director| %>
+      <tr>
+        <td><img width= "100" src="<%= director.image_url %>"></td>
+        <td><%= director.name %></td>
+        <td><%= director.dob %></td>
+        <td><%= director.bio[0..26] + "..." %></td>
+        <td><a href="/view_director/<%= director.id %>" class="btn btn-primary"><i class="fa fa-search-plus"></i></a></td>
+        <td><a href="/edit_director/<%= director.id %>" class="btn btn-warning"><i class="fa fa-pencil-square-o"></i></a></td>
+        <td><a href="/delete_director/<%= director.id %>" class="btn btn-danger"><i class="fa fa-trash"></i></a></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+
 
 
 
