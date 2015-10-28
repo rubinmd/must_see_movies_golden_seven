@@ -1,0 +1,18 @@
+  <div class="page-header">
+    <h1>Movie Information</h1>
+  </div>
+
+  <dl class="dl-horizontal">
+    <dt>Title:</dt>
+    <dd><p><%= @movie.title %></p></dd>
+    <dt>Year:</dt>
+    <dd><p><%= @movie.year %></p></dd>
+    <dt>Duration:</dt>
+    <dd><p><%= @movie.duration %></p></dd>
+    <dt>Description:</dt>
+    <dd><p><%= @movie.description %></p></dd>
+    <dt>Image:</dt>
+    <dd><img width="400" src="<%= @movie.image_url %>"></dd>
+  </dl>
+
+  <a class="btn btn-primary" href="/movies">Back</a>

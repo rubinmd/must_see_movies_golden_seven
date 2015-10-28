@@ -1,0 +1,41 @@
+  <div class="page-header">
+    <h1>Edit movie</h1>
+  </div>
+
+  <form action="/update_movie/<%= @movie.id %>" class="form-horizontal">
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="tile">Title:</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="title" name="title" value="<%= @movie.title %>">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="year">Year:</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="year" name="year" value=<%= @movie.year %>>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="year">Duration:</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="duration" name="duration" value=<%= @movie.duration %>>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="description">Description:</label>
+      <div class="col-sm-10">
+        <textarea type="text" class="form-control" id="description" name="description"><%= @movie.description %></textarea>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="img_url">Image URL</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="img_url" name="img_url" value=<%= @movie.image_url %>>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-10 col-sm-offset-2">
+        <button type="submit" class="btn btn-primary">Update movie</button>
+      </div>
+    </div>
+  </form>

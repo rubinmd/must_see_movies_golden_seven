@@ -1,57 +1,57 @@
 class MoviesController < ApplicationController
 
-  def index_directors
-    @directors=Director.all
+  def index_movies
+    @movies=Movie.all
   end
 
-  def add_director
+  def add_movie
   end
 
-  def submit_director
-    @name=params["name"]
+  def submit_movie
+    @title=params["title"]
+    @year=params["year"]
+    @duration=params["duration"]
+    @description=params["description"]
     @img_url=params["img_url"]
-    @dob=params["dob"]
-    @bio=params["bio"]
-    d=Director.new
-    d.name=@name
-    d.image_url=@img_url
-    d.dob=@dob
-    d.bio=@bio
-    d.save
+    m=Movie.new
+    m.title=@title
+    m.year=@year
+    m.duration=@duration
+    m.description=@description
+    m.image_url=@img_url
+    m.save
   end
 
-  def delete_director
+  def delete_movie
     @id=params[:id]
-    Director.find(@id).destroy
-    redirect_to("/directors")
+    Movie.find(@id).destroy
+    redirect_to("/movies")
   end
 
-  def edit_director
+  def edit_movie
     @id=params[:id]
-    @director=Director.find(@id)
+    @movie=Movie.find(@id)
   end
 
-  def update_director
+  def update_movie
     @id=params[:id]
-    @name=params["name"]
+    @title=params["title"]
+    @year=params["year"]
+    @duration=params["duration"]
+    @description=params["description"]
     @img_url=params["img_url"]
-    @dob=params["dob"]
-    @bio=params["bio"]
-    d=Director.find(@id)
-    d.name=@name
-    d.image_url=@img_url
-    d.dob=@dob
-    d.bio=@bio
-    d.save
+    m=Movie.find(@id)
+    m.title=@title
+    m.year=@year
+    m.duration=@duration
+    m.description=@description
+    m.image_url=@img_url
+    m.save
   end
 
-  def view_director
+  def view_movie
     @id=params[:id]
-    d=Director.find(@id)
-    @name=d.name
-    @img_url=d.image_url
-    @dob=d.dob
-    @bio=d.bio
+    @movie=Movie.find(@id)
   end
 
 end
