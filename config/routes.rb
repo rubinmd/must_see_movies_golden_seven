@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root"directors#index_directors"
   get("/directors",  { :controller => "directors", :action => "index_directors" })
   get("/add_director",  { :controller => "directors", :action => "add_director" })
   get("/submit_director",  { :controller => "directors", :action => "submit_director" })
